@@ -1,0 +1,44 @@
+link(rel='import', href='../js/bower/polymer/polymer.html')
+
+polymer-element(name='main-screen', attributes='menu main')
+  template
+    link(rel='stylesheet', href='styles/main-screen.css')
+
+    core-scaffold
+      core-header-panel(navigation, flex)
+        core-toolbar
+          span 
+            | {{menu}}
+
+        core-menu(on-core-select='{{selectAction}}', selected='0')
+          core-item(num='0', label='Android', icon='android')
+            paper-ripple(fit)
+          core-item(num='1', label='Bug Report', icon='bug-report')
+            paper-ripple(fit)
+          core-item(num='2', label='Account', icon='account-circle')
+            paper-ripple(fit)
+
+      span(tool) 
+        | {{main}}
+        paper-shadow(z='1')
+
+      .content(fit)
+        h1 Polymer is working
+
+        core-pages#pages(selected='0')
+          div Android
+          div Bug
+          div Account
+
+  script.
+    Polymer("main-screen", {
+      ready: function() {
+        this.pages = this.$.pages;
+      },
+      selectAction: function(e, detail) {
+        if (detail.isSelected) {
+          var selectedItem = detail.item;
+          this.pages.selected = selectedItem.attributes.num.value;        
+        }
+      }
+    });

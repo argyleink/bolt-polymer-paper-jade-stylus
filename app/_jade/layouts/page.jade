@@ -1,0 +1,25 @@
+doctype html
+html(manifest = dev ? '' : 'manifest.appcache')
+  include ../includes/head
+    
+  block title
+    title Bolt & Paper
+
+  block description
+    meta(name='description', content='Default page description')
+
+  block css
+    //- master.styl combines all our modules into this file
+    link(rel='stylesheet', href='styles/app.css')
+
+  script(src='js/bower/platform/platform.js')
+
+  //- Polymer Imports
+  block scripts
+    include ../includes/scripts
+
+  body
+    block content
+      h1 Default Test Title
+
+    

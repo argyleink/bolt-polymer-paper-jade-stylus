@@ -1,0 +1,23 @@
+{
+  "name": "Bolt",
+  "version": "0.0.1",
+  "homepage": "https://github.com/argyleink/Bolt",
+  "authors": [
+    "Adam Argyle <atom@argyleink.com>"
+  ],
+  "description": "Open sourced components",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/js/bower",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "polymer": "Polymer/polymer#~0.3.5",
+    "core-elements": "Polymer/core-elements#~0.3.5",
+    "paper-elements": "Polymer/paper-elements#~0.3.5"
+  }
+}

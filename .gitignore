@@ -1,0 +1,5 @@
+app/js/bower/
+build/
+node_modules/
+app.sublime-workspace
+.DS_Store

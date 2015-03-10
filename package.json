@@ -1,0 +1,43 @@
+{
+  "name": "Bolt",
+  "version": "0.0.3",
+  "author": "Adam Argyle",
+  "private": false,
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/website.git"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install && grunt",
+    "start": "node server.js",
+    "test": "node_modules/.bin/bower install && grunt test"
+  },
+  "devDependencies": {
+    "autoprefixer-stylus": "*",
+    "bower": "*",
+    "clientjade": "git://github.com/argyleink/clientjade.git",
+    "grunt-asciify": "*",
+    "grunt-browser-sync": "*",
+    "grunt-bump": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-csso": "*",
+    "grunt-manifest": "*",
+    "grunt-newer": "*",
+    "grunt-notify": "*",
+    "grunt-shell": "*",
+    "grunt-svgmin": "*",
+    "grunt-uncss": "*",
+    "jit-grunt": "*",
+    "load-grunt-configs": "*",
+    "time-grunt": "*"
+  }
+}

@@ -1,0 +1,15 @@
+if dev
+  //- load libs from build.coffee vendor_files object array
+  each path in bower
+    link(rel='import', href=path)
+
+  //- Custom Component Imports
+  link(rel='import', href='components/main-screen.html')
+
+  //- script(src='js/app.js')
+  //- more of your app scripts here!
+  
+else
+  //- dont let libs get too big =)
+  script(src='js/lib.min.js')
+  script(src='js/app.min.js', async)
