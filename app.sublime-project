@@ -34,6 +34,16 @@
 		},
 		{
 			"follow_symlinks": true,
+			"name": "Components",
+			"path": "app/_jade/components"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Component Styles",
+			"path": "app/styles/components"
+		},
+		{
+			"follow_symlinks": true,
 			"name": "Builds",
 			"path": "build"
 		},
