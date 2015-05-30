@@ -12,13 +12,13 @@ html(manifest = dev ? '' : 'manifest.appcache')
     //- master.styl combines all our modules into this file
     link(rel='stylesheet', href='styles/app.css')
 
-  script(src='js/bower/platform/platform.js')
+  script(src='js/bower/webcomponentsjs/webcomponents-lite.js')
 
   //- Polymer Imports
   block scripts
     include ../includes/scripts
 
-  body
+  body.fullbleed.layout.vertical
     block content
       h1 Default Test Title
 
