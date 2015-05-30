@@ -3,6 +3,7 @@ module.exports =
   	bsFiles:
   		src: [
   			"<%= build_dir %>/styles/*"
+        "<%= build_dir %>/components/styles/*"
   			"<%= build_dir %>/*.html"
         "<%= build_dir %>/js/lib.min.js"
   		]

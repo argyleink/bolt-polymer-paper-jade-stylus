@@ -4,7 +4,7 @@ module.exports =
     spawn: false
 
   css:
-    files: ["<%= app_dir %>/styles/**/*.styl", "!<%= app_dir %>/styles/components/*"]
+    files: ["<%= app_dir %>/styles/*.styl"]
     tasks: ["stylus:dev"]
 
   component_css:

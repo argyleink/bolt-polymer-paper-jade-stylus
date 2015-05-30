@@ -15,30 +15,27 @@ module.exports =
       compress:       false
       linenos:        false
       "include css":  true
-      define:         bower: "<%= vendor_files.css %>"
       use:            autoprefixerPlugin
 
-    files: "<%= app_files.stylus %>"
+    files: "<%= app_files.stylus.app %>"
 
   dev:
     options:
       compress:       false
       linenos:        true
       "include css":  true
-      define:         bower: "<%= vendor_files.css %>"
       use:            autoprefixerPlugin
 
-    files: "<%= app_files.stylus %>"
+    files: "<%= app_files.stylus.app %>"
 
   components:
     options:
       compress:       false
       linenos:        true
       "include css":  true
-      use:            autoprefixerPlugin
 
     expand: true
-    cwd:    "<%= app_dir %>/styles/components"
+    cwd:    "<%= app_files.stylus.components.in %>"
     src:    "*.styl"
-    dest:   "<%= build_dir %>/components/styles"
+    dest:   "<%= app_files.stylus.components.out %>"
     ext:    ".css"

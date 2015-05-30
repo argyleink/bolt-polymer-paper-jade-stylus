@@ -40,9 +40,13 @@ module.exports = (grunt) ->
       dest:   "<%= build_dir %>/components"
       ext:    ".html"
     ]
-    stylus: [
-      "<%= build_dir %>/styles/app.css":      "<%= app_dir %>/styles/master.styl"
-    ]
+    stylus: 
+      app: [
+        "<%= build_dir %>/styles/app.css":      "<%= app_dir %>/styles/master.styl"
+      ]
+      components: 
+        in:    "<%= app_dir %>/styles/components"
+        out:   "<%= build_dir %>/components/styles"
 
   # test_files:
   #   js: [ "tests/" ]
@@ -63,21 +67,8 @@ module.exports = (grunt) ->
 
   bower_base: if grunt.option("prod") == true then "app/" else ""
   vendor_files:
-    bower: [
-      "<%= bower_base %><%= bower_dir %>/core-toolbar/core-toolbar.html"
-      "<%= bower_base %><%= bower_dir %>/core-menu/core-menu.html"
-      "<%= bower_base %><%= bower_dir %>/core-pages/core-pages.html"
-      "<%= bower_base %><%= bower_dir %>/core-item/core-item.html"
-      "<%= bower_base %><%= bower_dir %>/core-header-panel/core-header-panel.html"
-      "<%= bower_base %><%= bower_dir %>/core-drawer-panel/core-drawer-panel.html"
-      "<%= bower_base %><%= bower_dir %>/core-scaffold/core-scaffold.html"
-      "<%= bower_base %><%= bower_dir %>/core-icons/core-icons.html"
-      "<%= bower_base %><%= bower_dir %>/paper-shadow/paper-shadow.html"
-      "<%= bower_base %><%= bower_dir %>/paper-ripple/paper-ripple.html"
-    ]
-    css: [
-      # "../../<%= app_dir %>/<%= bower_dir %>/flexboxgrid/dist/flexboxgrid.css"
-    ]
+    bower: []
+    css: []
     assets: [
       "robots.txt"
       "manifest.json"
