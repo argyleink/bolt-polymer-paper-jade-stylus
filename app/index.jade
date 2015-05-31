@@ -4,5 +4,75 @@ block title
   title Index Page
 
 block content
-  main-screen(main='View Title', menu='App Menu')
-  //- proto-element
+  template#app(is='dom-bind')
+
+    paper-drawer-panel#paperDrawerPanel(forcenarrow='')
+
+      div(drawer='')
+        // Drawer Toolbar
+        paper-toolbar#drawerToolbar
+          span Menu
+
+        // Drawer Content
+        paper-menu.list(attr-for-selected='data-route', selected='{{route}}', on-iron-select='onMenuSelect')
+          a(data-route='home', href='/')
+            iron-icon(icon='home')
+            span Home
+          a(data-route='users', href='/users')
+            iron-icon(icon='info')
+            span Users
+          a(data-route='contact', href='/contact')
+            iron-icon(icon='mail')
+            span Contact
+
+
+      paper-header-panel(main='', mode='waterfall-tall')
+        // Main Toolbar
+        paper-toolbar#mainToolbar
+          button#paperToggle(tabindex='1', paper-drawer-toggle='')
+            iron-icon(icon='menu', paper-drawer-toggle='')
+          span.flex
+
+          // Toolbar icons
+          paper-icon-button(icon='refresh')
+          paper-icon-button(icon='search')
+          .middle
+
+          // Application name
+          .appname.bottom.paper-font-display2 Polymer Starter Kit
+
+        // Main Content
+        iron-pages(attr-for-selected='data-route', selected='{{route}}')
+          section(data-route='home')
+            paper-material(elevation='1')
+              my-greeting
+              p.paper-font-subhead You now have:
+              my-list
+              p.paper-font-body2
+                | Looking for more Web App layouts? Check out our 
+                a(href='https://github.com/PolymerElements/app-layout-templates') layouts
+                |  collection. You can also 
+                a(href='http://polymerelements.github.io/app-layout-templates/') preview
+                |  them live.
+                
+          section(data-route='users')
+            paper-material(elevation='1')
+              h2.paper-font-display2 Users
+              p This is the users section
+              a(href='/users/Rob') Rob
+              p
+
+          section(data-route='user-info')
+            paper-material(elevation='1')
+              h2.paper-font-display2
+                | User:
+                span {{params.name}}
+              div
+                | This is 
+                span {{params.name}}
+                | 's section
+
+          section(data-route='contact')
+            paper-material(elevation='1')
+              h2.paper-font-display2 Contact
+              p This is the contact section

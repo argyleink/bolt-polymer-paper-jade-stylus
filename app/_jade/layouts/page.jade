@@ -15,11 +15,13 @@ html(manifest = dev ? '' : 'manifest.appcache')
   script(src='js/bower/webcomponentsjs/webcomponents-lite.js')
 
   //- Polymer Imports
-  block scripts
-    include ../includes/scripts
+  block polymer
+    include ../includes/components
 
   body.fullbleed.layout.vertical
     block content
       h1 Default Test Title
 
+    block scripts
+      include ../includes/scripts
     
