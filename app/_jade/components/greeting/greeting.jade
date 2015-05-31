@@ -1,0 +1,21 @@
+dom-module#greeting
+  template
+    link(rel='stylesheet', href='../styles/greeting.css')
+
+    h1.paper-font-display1
+      span {{greeting}}
+    
+    span.paper-font-body2 Update test to change the greeting
+    input.paper-font-body2(value='{{greeting.input}}')
+
+  script.
+    Polymer({
+      is: 'my-greeting',
+      properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        }
+      }
+    });

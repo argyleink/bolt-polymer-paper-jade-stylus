@@ -5,6 +5,7 @@ module.exports =
   			"<%= build_dir %>/styles/*"
         "<%= build_dir %>/components/styles/*"
   			"<%= build_dir %>/*.html"
+        "<%= build_dir %>/js/*.js"
         "<%= build_dir %>/js/lib.min.js"
   		]
 
