@@ -1,21 +1,22 @@
-dom-module#greeting
-  template
-    link(rel='stylesheet', href='../styles/greeting.css')
+dom-module#my-greeting
+  link(rel='stylesheet', href='../styles/greeting.css')
 
+  template
     h1.paper-font-display1
       span {{greeting}}
     
-    span.paper-font-body2 Update test to change the greeting
-    input.paper-font-body2(value='{{greeting.input}}')
+    .paper-font-body1 Update text to change the greeting (2 way data-binding example)
+    paper-input(label='New Welcome Text', type='text', value='{{greeting::change}}', on-change='textChanged')
+    paper-toast#toasty(text='You changed the title!')
 
-  script.
-    Polymer({
-      is: 'my-greeting',
-      properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        }
-      }
-    });
+  script
+    :coffee
+      Polymer
+        is: 'my-greeting'
+        properties:
+          greeting:
+            type: String
+            value: 'Welcome!'
+            notify: true
+        textChanged: ->
+          @$.toasty.show()

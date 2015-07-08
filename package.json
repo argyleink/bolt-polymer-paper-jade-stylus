@@ -17,6 +17,7 @@
     "autoprefixer-stylus": "*",
     "bower": "*",
     "clientjade": "git://github.com/argyleink/clientjade.git",
+    "coffee-script": "^1.9.3",
     "grunt-asciify": "*",
     "grunt-browser-sync": "*",
     "grunt-bump": "*",

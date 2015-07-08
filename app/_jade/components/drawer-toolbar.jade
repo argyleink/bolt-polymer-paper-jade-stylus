@@ -1,0 +1,17 @@
+dom-module#my-drawer-toolbar
+  template
+    paper-toolbar#drawerToolbar
+      .title Menu
+      paper-icon-button(icon='close', on-tap='closeDrawer')
+
+  script
+    :coffee
+      Polymer
+        is: 'my-drawer-toolbar'
+        closeDrawer: ->
+          document
+            .querySelector('paper-drawer-panel')
+            .closeDrawer()
+
+
+  

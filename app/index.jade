@@ -9,11 +9,9 @@ block content
     paper-drawer-panel#paperDrawerPanel(forcenarrow='')
 
       div(drawer='')
-        // Drawer Toolbar
-        paper-toolbar#drawerToolbar
-          span Menu
+        my-drawer-toolbar
 
-        // Drawer Content
+        //- Drawer Content
         paper-menu.list(attr-for-selected='data-route', selected='{{route}}', on-iron-select='onMenuSelect')
           a(data-route='home', href='/')
             iron-icon(icon='home')
@@ -27,28 +25,27 @@ block content
 
 
       paper-header-panel(main='', mode='waterfall-tall')
-        // Main Toolbar
+        //- Main Toolbar
         paper-toolbar#mainToolbar
-          button#paperToggle(tabindex='1', paper-drawer-toggle='')
+          button#paperToggle(tabindex='1', paper-drawer-toggle)
             iron-icon(icon='menu', paper-drawer-toggle='')
           span.flex
 
-          // Toolbar icons
+          //- Toolbar icons
           paper-icon-button(icon='refresh')
           paper-icon-button(icon='search')
-          .middle
 
-          // Application name
+          //- Application name
           .appname.bottom.paper-font-display2 Polymer Starter Kit
 
-        // Main Content
+        //- Main Content
         iron-pages(attr-for-selected='data-route', selected='{{route}}')
           section(data-route='home')
-            paper-material(elevation='1')
+            paper-material(elevation='2')
               my-greeting
-              p.paper-font-subhead You now have:
               my-list
-              p.paper-font-body2
+
+              .paper-font-body2
                 | Looking for more Web App layouts? Check out our 
                 a(href='https://github.com/PolymerElements/app-layout-templates') layouts
                 |  collection. You can also 
@@ -59,7 +56,7 @@ block content
             paper-material(elevation='1')
               h2.paper-font-display2 Users
               p This is the users section
-              a(href='/users/Rob') Rob
+              a(href='/users/Rob') {{params.name}}
               p
 
           section(data-route='user-info')
